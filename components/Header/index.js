@@ -9,4 +9,7 @@ export default () => <div className="header">
   <Link href="/counter">
     <a> Counter </a>
   </Link>
+  <Link href="/hook">
+    <a> Hook </a>
+  </Link>
 </div>
