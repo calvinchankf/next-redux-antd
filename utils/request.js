@@ -6,7 +6,8 @@ import {
 } from './config'
 
 const get = async url => {
-  const raw = await fetch(`${apiHost}:${apiPort}/${apiVersion}${url}`);
+  const endpoint = url.includes('http://') || url.includes('https://') ? url : `${apiHost}:${apiPort}/${apiVersion}${url}`
+  const raw = await fetch(endpoint);
   return await raw.json()
 }
 
