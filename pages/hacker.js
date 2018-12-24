@@ -1,6 +1,7 @@
 import { useState, useReducer, useEffect } from 'react'
 // components
 import Header from 'components/Header'
+import LoadMoreButton from 'components/LoadMoreButton'
 // context + hooks
 import { fetchHackerNews } from 'api/hacker'
 import { HackerContext } from "contexts/HackerContext";
@@ -11,7 +12,7 @@ export default () => {
   const [state, dispatch] = useReducer(hackerReducer, hackerInitState);
 
   const fetchData = async () => {
-    await fetchHackerNews(dispatch)
+    await fetchHackerNews(state, dispatch)
   }
 
   useEffect(() => {
@@ -23,6 +24,7 @@ export default () => {
       <Header />
       <div> Welcome to Hacker News </div>
       <HackerNews />
+      <LoadMoreButton action={fetchData} />
     </HackerContext.Provider>
   )
 }
