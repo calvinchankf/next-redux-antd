@@ -1,9 +1,11 @@
 import { useState, useReducer, useEffect } from 'react'
-import { List } from 'antd'
 // components
 import Header from 'components/Header'
+// context + hooks
 import { fetchHackerNews } from 'api/hacker'
+import { HackerContext } from "contexts/HackerContext";
 import { hackerInitState, hackerReducer } from 'reducers/hacker'
+import HackerNews from 'components/HackerNews'
 
 export default () => {
   const [state, dispatch] = useReducer(hackerReducer, hackerInitState);
@@ -16,18 +18,11 @@ export default () => {
     fetchData()
   }, []);
 
-  const list = (<List
-    size="small"
-    bordered
-    dataSource={state.news}
-    renderItem={item => (<List.Item>{item.title}</List.Item>)}
-  />)
-
   return (
-    <div>
+    <HackerContext.Provider value={{ state, dispatch }}>
       <Header />
       <div> Welcome to Hacker News </div>
-      {list}
-    </div>
+      <HackerNews />
+    </HackerContext.Provider>
   )
 }

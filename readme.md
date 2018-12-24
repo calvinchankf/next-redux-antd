@@ -1,7 +1,8 @@
 Next + Redux + antd
 ===
 - just my tempate for upcoming projects 
-- trying out react-hooks, it seems kinda fun but it is hard to debug without redux-devtools
+- react-hooks, it seems kinda fun but it is hard to debug without redux-devtools
+- context + hooks: so from now on, we can say good bye to redux
 
 BTW, dev frontend is so annoying LOL, it seems like i have to create boilerplates every year
 ---
