@@ -1,36 +1,15 @@
-// components
 import { useState, useReducer, useEffect } from 'react'
-import { List } from 'antd';
+import { List } from 'antd'
+// components
 import Header from 'components/Header'
-
-import { get } from 'utils/request'
-
-const initialState = {
-  data: []
-}
-
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'FETCH_LIST':
-      return { data: action.payload }
-    case 'CLEAN_LIST':
-      return initialState
-    default:
-      return state;
-  }
-}
+import { fetchHackerNews } from 'api/hacker'
+import { hackerInitState, hackerReducer } from 'reducers/hacker'
 
 export default () => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(hackerReducer, hackerInitState);
 
   const fetchData = async () => {
-    const result = await get(
-      'http://hn.algolia.com/api/v1/search?query=redux',
-    );
-    dispatch({
-      type: 'FETCH_LIST',
-      payload: result.hits
-    })
+    await fetchHackerNews(dispatch)
   }
 
   useEffect(() => {
@@ -40,7 +19,7 @@ export default () => {
   const list = (<List
     size="small"
     bordered
-    dataSource={state.data}
+    dataSource={state.news}
     renderItem={item => (<List.Item>{item.title}</List.Item>)}
   />)
 
