@@ -6,6 +6,7 @@ export default () => {
   // useContext
   // 1. read the context
   // 2. subscribe the component to get updates from context
+  // therefore i dont need to wrap the component with <HackerContext.Consumer>
   const { state, dispatch } = useContext(HackerContext)
   return (<List
     size="small"
