@@ -3,6 +3,9 @@ import { List } from 'antd'
 import { HackerContext } from "../../contexts/HackerContext";
 
 export default () => {
+  // useContext
+  // 1. read the context
+  // 2. subscribe the component to get updates from context
   const { state, dispatch } = useContext(HackerContext)
   return (<List
     size="small"
