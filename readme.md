@@ -6,5 +6,5 @@ Next + Redux + antd
 
 BTW, dev frontend is so annoying LOL, it seems like i have to create boilerplates every year
 ---
-- [2017 SPA2017](https://github.com/calvinchankf/React-SPA-Starter)
+- [2017 SPA2017](https://github.com/calvinchankf/SPA2017)
 - [2016 React-SPA-Starter](https://github.com/calvinchankf/React-SPA-Starter)
