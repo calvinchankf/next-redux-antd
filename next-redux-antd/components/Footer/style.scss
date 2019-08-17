@@ -1,0 +1,9 @@
+$mobile-max-width: 576px;
+$mobile-break-point: "screen and (max-width : #{$mobile-max-width})";
+
+.footer {
+    background-color: azure;
+    @media #{$mobile-break-point} {
+        background-color: red;
+    }
+}

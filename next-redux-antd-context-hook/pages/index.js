@@ -1,10 +1,9 @@
 // components
 import Header from 'components/Header'
-// page component
-import { Button } from 'antd';
+import Footer from 'components/Footer'
 
 export default () => <div>
   <Header />
-  <Button type="primary">Primary</Button>
   <div>Hi there</div>
+  <Footer />
 </div>

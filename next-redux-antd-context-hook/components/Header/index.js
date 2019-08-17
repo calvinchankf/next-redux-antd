@@ -5,11 +5,11 @@ import "./style.css"
 export default () => <div className="header">
   <Link href="/">
     <a> Home </a>
-  </Link > {' '}
+  </Link >
   <Link href="/counter">
     <a> Counter </a>
   </Link>
-  <Link href="/hook">
-    <a> Hook </a>
+  <Link href="/hacker">
+    <a> Hacker </a>
   </Link>
 </div>

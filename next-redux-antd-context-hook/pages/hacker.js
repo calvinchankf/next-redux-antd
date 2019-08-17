@@ -1,12 +1,14 @@
 import { useState, useReducer, useEffect } from 'react'
 // components
 import Header from 'components/Header'
-import LoadMoreButton from 'components/LoadMoreButton'
+import Footer from 'components/Footer'
 // context + hooks
 import { fetchHackerNews } from 'api/hacker'
 import { HackerContext } from "contexts/HackerContext";
 import { hackerInitState, hackerReducer } from 'reducers/hacker'
 import HackerNews from 'components/HackerNews'
+
+import { Button } from 'antd'
 
 export default () => {
   const [state, dispatch] = useReducer(hackerReducer, hackerInitState);
@@ -24,7 +26,8 @@ export default () => {
       <Header />
       <div> Welcome to Hacker News </div>
       <HackerNews />
-      <LoadMoreButton action={fetchData} />
+      <Button style={{ margin: 16 }} type="dashed" onClick={fetchData}>Load More</Button>
+      <Footer />
     </HackerContext.Provider>
   )
 }
