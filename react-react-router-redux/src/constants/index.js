@@ -1,0 +1,5 @@
+export const INCREMENT = 'INCREMENT';
+export const DECREMENT = 'DECREMENT';
+
+export const FETCH_HACKER_NEWS = 'FETCH_HACKER_NEWS';
+export const CLEAN_HACKER_NEWS = 'CLEAN_HACKER_NEWS';
